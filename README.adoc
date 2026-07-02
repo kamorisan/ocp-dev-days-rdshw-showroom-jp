@@ -1,6 +1,6 @@
 = OpenShift Dev Day
 
-**OpenShift Dev Day** ワークショップ用の Showroom ラボガイド -- 参加者が Parasol Insurance の新しい開発者の役割を演じ、1つのチケットも提出せずにコードから本番環境まで機能をリリースする 90 分間のハンズオン体験です。
+**OpenShift Dev Day** ワークショップ用の Showroom ラボガイド - 参加者が Parasol Insurance の新しい開発者の役割を演じ、1つのチケットも提出せずにコードから本番環境まで機能をリリースする 90 分間のハンズオン体験です。
 
 このワークショップは、世界中で対面およびバーチャルのハンズオンイベントを提供する https://www.redhat.com/en/events/red-hat-openshift-roadshows[Red Hat OpenShift Roadshows] シリーズの一部です。各 Roadshow は OpenShift プラットフォームのさまざまな側面をカバーしています。このワークショップは、Developer Hub、Dev Spaces、Pipelines、GitOps、AI 支援コーディングにわたる統合された開発者エクスペリエンスに焦点を当てています。
 
@@ -8,13 +8,13 @@ https://antora.org[Antora] と Red Hat Demo Platform Showroom フレームワー
 
 == ドキュメント
 
-完全なドキュメント -- 入門、コンテンツ構造、設定、ローカル開発、AI 支援コンテンツ作成 -- は以下で利用できます:
+完全なドキュメント（入門、コンテンツ構造、設定、ローカル開発、AI 支援コンテンツ作成）は以下で利用できます:
 
 https://rhpds.github.io/showroom_template_nookbag/
 
 == クイックスタート
 
-. https://github.com/rhpds/showroom_template_nookbag/generate[このテンプレートからリポジトリを作成] (推奨命名: `<lab-name>-showroom`)
+. https://github.com/rhpds/showroom_template_nookbag/generate[このテンプレートからリポジトリを作成] （推奨命名: `<lab-name>-showroom`）
 . 新しいリポジトリをクローンしてローカルでプレビュー:
 +
 [source,sh]
@@ -25,10 +25,12 @@ podman run --rm --name antora -v $PWD:/antora -p 8080:8080 -i -t ghcr.io/juliaaa
 SELinux システムでは、ボリュームマウントに `:z` を追加してください。
 
 . `content/modules/ROOT/pages/` のコンテンツを編集
-. ディレクトリレイアウト、ライブリロード付き Podman Compose、開発モードなどについては、https://rhpds.github.io/showroom_template_nookbag/modules/content-repo.html[Content Repository] ドキュメントを参照してください。
+. ディレクトリレイアウト、ライブリロード付き Podman Compose、開発モードなどについては、
+https://rhpds.github.io/showroom_template_nookbag/modules/content-repo.html[Content Repository ドキュメント] を参照してください。
 
 == AI でコンテンツを作成
 
 https://github.com/rhpds/rhdp-skills-marketplace[RHDP Skills Marketplace] は、Cursor IDE と Claude Code 用のスキルを提供し、ラボやデモを生成し、Red Hat 標準に対してコンテンツを検証します。
 
-詳細については、https://rhpds.github.io/showroom_template_nookbag/modules/content-repo.html#_creating_content_with_ai_tools[AI Tools ドキュメント] を参照してください。
+詳細については、
+https://rhpds.github.io/showroom_template_nookbag/modules/content-repo.html#_creating_content_with_ai_tools[AI Tools ドキュメント] を参照してください。
