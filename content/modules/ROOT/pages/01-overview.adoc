@@ -1,55 +1,55 @@
-= Workshop overview
+= ワークショップ概要
 include::partial$_attributes.adoc[]
 
-== Your role and mission
+== あなたの役割とミッション
 
-You are a new developer at **Parasol Insurance**.
+あなたは **Parasol Insurance** の新しい開発者です。
 
-Parasol is growing fast. New product lines, new teams, new developers -- but the platform team cannot keep up. Every new team needs a custom CI/CD setup, their own namespace provisioning, and a weeks-long onboarding process. Developers spend more time filing tickets and waiting for access than they do writing code. Local environments frequently break or drift, causing lost productivity. Contractors who occasionally onboard take a long time to find relevant information and best practices.
+Parasol は急速に成長しています。新しい製品ライン、新しいチーム、新しい開発者 -- しかし、プラットフォームチームは追いつくことができません。新しいチームごとにカスタム CI/CD セットアップ、独自の namespace プロビジョニング、数週間にわたるオンボーディングプロセスが必要です。開発者はコードを書くよりも、チケットを提出してアクセスを待つことに多くの時間を費やしています。ローカル環境が頻繁に壊れたり変化したりして、生産性が失われています。時々オンボードする契約社員は、関連情報やベストプラクティスを見つけるのに長い時間がかかります。
 
-Sound familiar?
+聞き覚えがありますか?
 
-Parasol's platform engineering team has been working on a solution: a cohesive application platform built on Red Hat OpenShift that provides developer tooling, CI/CD, GitOps-driven deployments, and a self-service internal developer portal -- all in one place.
+Parasol のプラットフォームエンジニアリングチームは解決策に取り組んできました: 開発者ツール、CI/CD、GitOps 駆動のデプロイメント、セルフサービス型の内部開発者ポータルをすべて 1 か所で提供する、Red Hat OpenShift 上に構築された統合アプリケーションプラットフォームです。
 
-**Today is your first day.** You have been given access to the platform and assigned your first task. By the end of this workshop, you will have shipped a feature to production without filing a single ticket.
+**今日があなたの初日です。** あなたはプラットフォームへのアクセスを与えられ、最初のタスクを割り当てられました。このワークショップの終わりまでに、1 つのチケットも提出せずに本番環境に機能をリリースすることになります。
 
-== What you will accomplish
+== 達成すること
 
-By the end of this workshop, you will have hands-on experience with:
+このワークショップの終わりまでに、以下の実践的な経験を得られます:
 
-* **Red Hat Developer Hub** -- Navigate the software catalog, discover APIs and documentation, and use the AI assistant to get answers about the platform
-* **Self-service templates** -- Create an isolated development environment with its own CI/CD pipeline using a golden path template
-* **Red Hat OpenShift Dev Spaces** -- Write code in a preconfigured cloud IDE with an AI coding assistant, without installing anything locally
-* **OpenShift Pipelines** -- Push code and watch an automated CI/CD pipeline build, test, and scan your changes
-* **OpenShift GitOps** -- See Argo CD deploy your changes to production automatically
-* **OpenShift Console** -- Use the web console for deeper debugging and application monitoring
+* **Red Hat Developer Hub** -- ソフトウェアカタログをナビゲートし、API とドキュメントを発見し、AI アシスタントを使用してプラットフォームに関する回答を得る
+* **セルフサービステンプレート** -- ゴールデンパステンプレートを使用して、独自の CI/CD パイプラインを持つ分離された開発環境を作成する
+* **Red Hat OpenShift Dev Spaces** -- ローカルに何もインストールせずに、AI コーディングアシスタントを備えた事前設定されたクラウド IDE でコードを書く
+* **OpenShift Pipelines** -- コードをプッシュして、自動化された CI/CD パイプラインが変更をビルド、テスト、スキャンするのを確認する
+* **OpenShift GitOps** -- Argo CD が変更を本番環境に自動的にデプロイするのを確認する
+* **OpenShift Console** -- より深いデバッグとアプリケーションモニタリングのために Web コンソールを使用する
 
-== The developer journey
+== 開発者ジャーニー
 
-This workshop follows one continuous story:
+このワークショップは、1 つの連続したストーリーに従います:
 
-. **Meet the platform** -- Log into Developer Hub, explore the software catalog, and get oriented
-. **Your mission** -- Find the task assigned to you and set up your development environment
-. **Build the feature** -- Open Dev Spaces, write code, and test locally
-. **Ship it** -- Push your code through the CI/CD pipeline and hit a quality gate
-. **Call in the AI** -- Use an agentic AI assistant to fix the code, push again, and pass the pipeline
-. **Go live** -- Merge your changes, create a release, and verify the feature in production
+. **プラットフォームとの出会い** -- Developer Hub にログインし、ソフトウェアカタログを探索し、オリエンテーションを受ける
+. **あなたのミッション** -- 割り当てられたタスクを見つけ、開発環境をセットアップする
+. **機能を構築する** -- Dev Spaces を開き、コードを書き、ローカルでテストする
+. **リリース** -- CI/CD パイプラインを通じてコードをプッシュし、品質ゲートに到達する
+. **AI を呼び出す** -- エージェント型 AI アシスタントを使用してコードを修正し、再度プッシュし、パイプラインを通過する
+. **本番環境へ** -- 変更をマージし、リリースを作成し、本番環境で機能を確認する
 
-No context switching between disconnected tools. One continuous flow from idea to production.
+切り離されたツール間のコンテキストスイッチングはありません。アイデアから本番環境まで 1 つの連続したフローです。
 
-== Target audience
+== 対象者
 
-This workshop is designed for:
+このワークショップは以下の方向けに設計されています:
 
-* Software developers who want faster, more consistent development workflows
-* IT decision makers evaluating application platform capabilities
-* Platform engineers who want to understand the developer experience they are enabling
-* Anyone interested in hands-on experience with OpenShift's developer tooling
+* より速く、より一貫性のある開発ワークフローを求めるソフトウェア開発者
+* アプリケーションプラットフォーム機能を評価する IT 意思決定者
+* 自分たちが可能にしている開発者エクスペリエンスを理解したいプラットフォームエンジニア
+* OpenShift の開発者ツールの実践的な経験に興味がある方
 
-== Prerequisites
+== 前提条件
 
-You should have:
+以下が必要です:
 
-* Basic familiarity with web applications and APIs
-* Comfort using a web browser and a code editor
-* Willingness to learn -- no prior OpenShift or container experience required
+* Web アプリケーションと API に関する基本的な知識
+* Web ブラウザとコードエディタの使用に慣れていること
+* 学ぶ意欲 -- OpenShift やコンテナの事前経験は不要

@@ -1,31 +1,31 @@
-= Module 1: The developer experience
+= Module 1: 開発者エクスペリエンス
 include::partial$_attributes.adoc[]
 :imagesdir: ../assets/images
 
-It is your first day at Parasol Insurance. You have been assigned to the claims processing team and given access to the company's application platform. Your manager has asked you to add a new claims statistics API endpoint to the Parasol application -- a feature that will help the business track claim volumes and categories.
+Parasol Insurance での初日です。あなたはクレーム処理チームに配属され、会社のアプリケーションプラットフォームへのアクセスを与えられました。マネージャーは、Parasol アプリケーションに新しいクレーム統計 API エンドポイントを追加するように依頼しました -- これは、ビジネスがクレームのボリュームとカテゴリを追跡するのに役立つ機能です。
 
-You do not need to install anything. You do not need to file a ticket. Everything you need is already waiting for you on the platform.
+何もインストールする必要はありません。チケットを提出する必要もありません。必要なものはすべて、プラットフォーム上であなたを待っています。
 
-== Learning objectives
+== 学習目標
 
-By the end of this module, you will be able to:
+このモジュールの終わりまでに、以下ができるようになります:
 
-* Navigate Developer Hub to discover applications, APIs, and documentation
-* Use self-service templates to create an isolated development environment
-* Write and test code in a cloud-based Dev Spaces IDE with AI assistance
-* Push code through an automated CI/CD pipeline and resolve quality gate failures
-* Verify a GitOps-driven deployment to production
+* Developer Hub をナビゲートして、アプリケーション、API、ドキュメントを見つける
+* セルフサービステンプレートを使用して、分離された開発環境を作成する
+* AI アシスタンスを備えたクラウドベースの Dev Spaces IDE でコードを書いてテストする
+* 自動化された CI/CD パイプラインを通じてコードをプッシュし、品質ゲートの失敗を解決する
+* GitOps 駆動のデプロイメントを本番環境で確認する
 
 [#section-1]
-== Section 1: Meet the platform
+== Section 1: プラットフォームとの出会い
 
-Your first stop is Red Hat Developer Hub -- Parasol's internal developer portal. This is where developers discover services, explore APIs, read documentation, and get AI-assisted answers about the platform. Instead of asking colleagues where things are, you can find everything here.
+最初の目的地は Red Hat Developer Hub です -- Parasol の社内開発者ポータルです。ここで開発者はサービスを発見し、API を探索し、ドキュメントを読み、プラットフォームに関する AI 支援の回答を得ることができます。同僚にどこに何があるか尋ねる代わりに、ここですべてを見つけることができます。
 
-=== Exercise 1: Explore Developer Hub
+=== Exercise 1: Developer Hub を探索する
 
-. Select the **Developer Hub** tab on the right, or open **Red Hat Developer Hub** at {rhdh_url}[{rhdh_url}^]
+. 右側の **Developer Hub** タブを選択するか、{rhdh_url}[{rhdh_url}^] で **Red Hat Developer Hub** を開きます
 
-. Log in with your credentials using the OIDC provider:
+. OIDC プロバイダを使用して認証情報でログインします:
 +
 --
 Username:
@@ -42,123 +42,123 @@ Password:
 +
 image::rhdh-login.png[Red Hat Developer Hub login page,link=self,window=blank,width=700]
 
-. After logging in, you will see the Developer Hub home page. This is the starting point for all developer activity at Parasol.
+. ログイン後、Developer Hub のホームページが表示されます。これは Parasol でのすべての開発者活動の起点です。
 +
 image::rhdh-homepage.png[Red Hat Developer Hub home page,link=self,window=blank,width=700]
 
-. Take a moment to look around the interface:
-* **Catalog** (left sidebar) -- the software catalog where all applications, components, and APIs are registered
-* **Self-Service** (the **+** button at the top of the page) -- templates for provisioning new projects and environments
-* **Lightspeed** (the hovering icon in the bottom-right corner) -- an AI assistant that can answer questions about the platform
+. インターフェースを少し見回してみましょう:
+* **Catalog** (左サイドバー) -- すべてのアプリケーション、コンポーネント、API が登録されているソフトウェアカタログ
+* **Self-Service** (ページ上部の **+** ボタン) -- 新しいプロジェクトと環境をプロビジョニングするためのテンプレート
+* **Lightspeed** (右下隅にホバリングしているアイコン) -- プラットフォームに関する質問に答えることができる AI アシスタント
 
-=== Exercise 2: Find the Parasol application in the software catalog
+=== Exercise 2: ソフトウェアカタログで Parasol アプリケーションを見つける
 
-. Click **Catalog** in the left sidebar.
+. 左サイドバーの **Catalog** をクリックします。
 +
 image::rhdh-catalog-main.png[Software catalog showing all registered components,link=self,window=blank,width=700]
 
-. Use the **Kind** dropdown to filter for **System** entities.
+. **Kind** ドロップダウンを使用して **System** エンティティでフィルタリングします。
 
-. Find and click on **parasol-insurance**.
+. **parasol-insurance** を見つけてクリックします。
 +
-This is the Parasol Insurance application system. It groups all the components, APIs, and resources that make up the application.
+これが Parasol Insurance アプリケーションシステムです。アプリケーションを構成するすべてのコンポーネント、API、リソースをグループ化しています。
 
-. Explore the system view:
-* Notice the components registered under this system
-* Look at the dependency relationships between components
-* Click on a component to see its detail page
+. システムビューを探索します:
+* このシステムの下に登録されているコンポーネントに注目してください
+* コンポーネント間の依存関係を見てください
+* コンポーネントをクリックして詳細ページを確認してください
 
-. On the component detail page, explore the tabs:
-* **Overview** -- ownership, lifecycle, and system information
-* **API** -- provided and consumed API definitions
-* **Relations** -- what this component depends on and what depends on it
+. コンポーネント詳細ページで、タブを探索します:
+* **Overview** -- 所有権、ライフサイクル、システム情報
+* **API** -- 提供および消費される API 定義
+* **Relations** -- このコンポーネントが依存するものと、このコンポーネントに依存するもの
 +
 image::rhdh-component-detail.png[Component detail page with Overview and CI/CD tabs,link=self,window=blank,width=700]
 
-. On the **API** tile, find the **parasol-insurance-api**. Click on it, then select the **Definition** tab.
+. **API** タイルで、**parasol-insurance-api** を見つけます。クリックして、**Definition** タブを選択します。
 +
-The API documentation is rendered directly from the source repository. When the code changes, the docs stay current automatically -- no separate wiki to maintain.
+API ドキュメントはソースリポジトリから直接レンダリングされます。コードが変更されると、ドキュメントは自動的に最新の状態に保たれます -- 別の wiki を維持する必要はありません。
 +
 image::rhdh-api-definition.png[API definition rendered from source in Developer Hub,link=self,window=blank,width=700]
 
-=== Exercise 3: Ask the AI assistant
+=== Exercise 3: AI アシスタントに質問する
 
-Developer Hub includes an AI assistant called **Lightspeed** that can answer questions about your applications, APIs, and documentation.
+Developer Hub には **Lightspeed** という AI アシスタントが含まれており、アプリケーション、API、ドキュメントに関する質問に答えることができます。
 
-. Click the **Lightspeed** icon in the bottom-right corner of the Developer Hub interface.
+. Developer Hub インターフェースの右下隅にある **Lightspeed** アイコンをクリックします。
 
-. Use the three dots menu in the top-right of the Lightspeed window to switch to full-screen view.
+. Lightspeed ウィンドウの右上にある三点メニューを使用して、フルスクリーンビューに切り替えます。
 +
 image::rhdh-lightspeed.png[Lightspeed AI assistant in Developer Hub,link=self,window=blank,width=700]
 
-. Try asking a question about the Parasol application:
+. Parasol アプリケーションについて質問してみましょう:
 +
 [source,role="copypaste"]
 ----
 Tell me about the parasol-insurance-api API in the catalog
 ----
 
-. Review the response. Lightspeed pulls information from the software catalog and documentation to give you contextual answers.
+. 応答を確認します。Lightspeed はソフトウェアカタログとドキュメントから情報を引き出し、文脈に即した回答を提供します。
 +
 image::rhdh-lightspeed-response.png[Lightspeed AI assistant in Developer Hub,link=self,window=blank,width=700]
 
 
-. Try another question:
+. 別の質問を試してみましょう:
 +
 [source,role="copypaste"]
 ----
 What components make up the parasol-insurance system?
 ----
 
-NOTE: Lightspeed responses may vary between attempts. If it does not find a specific entity on the first try, ask it to "list all APIs in the catalog" first, then re-ask your original question.
+NOTE: Lightspeed の応答は試行ごとに異なる場合があります。最初の試行で特定のエンティティが見つからない場合は、まず「list all APIs in the catalog」と尋ねてから、元の質問を再度尋ねてください。
 
-=== Verify
+=== 確認
 
-At this point, you should be able to:
+この時点で、以下ができるようになっているはずです:
 
-* Log into Developer Hub
-* Find the Parasol Insurance system in the software catalog
-* View component details, CI/CD status, and API documentation
-* Use Lightspeed to ask questions about the platform
+* Developer Hub にログインする
+* ソフトウェアカタログで Parasol Insurance システムを見つける
+* コンポーネントの詳細、CI/CD ステータス、API ドキュメントを表示する
+* Lightspeed を使用してプラットフォームに関する質問をする
 
 '''
 
 [#section-2]
-== Section 2: Your mission
+== Section 2: あなたのミッション
 
-Now that you know your way around, it is time to get to work. You have been assigned a task: add a claims statistics API endpoint to the Parasol application. Before you start coding, you need to set up an isolated development environment with its own CI/CD pipeline.
+プラットフォームの使い方がわかったところで、仕事に取り掛かる時間です。あなたにタスクが割り当てられました: Parasol アプリケーションにクレーム統計 API エンドポイントを追加することです。コーディングを始める前に、独自の CI/CD パイプラインを持つ分離された開発環境をセットアップする必要があります。
 
-=== Exercise 1: Create a development environment
+=== Exercise 1: 開発環境を作成する
 
-Developer Hub provides self-service templates that let you provision environments without filing tickets. The platform team has created a template that sets up everything you need: a feature branch, a dedicated pipeline, and a catalog entry to track your work.
+Developer Hub は、チケットを提出することなく環境をプロビジョニングできるセルフサービステンプレートを提供します。プラットフォームチームは、必要なものすべてをセットアップするテンプレートを作成しました: フィーチャーブランチ、専用パイプライン、作業を追跡するためのカタログエントリです。
 
-. In Developer Hub, click the **Self-Service** button (the **+** icon) at the top of the page.
+. Developer Hub で、ページ上部の **Self-Service** ボタン (**+** アイコン) をクリックします。
 +
-TIP: If Lightspeed is still covering the interface, close it by clicking the small **X** icon in the bottom-right corner. The assistant is always available -- you can reopen it at any time by clicking the same hovering icon.
+TIP: Lightspeed がまだインターフェースを覆っている場合は、右下隅の小さな **X** アイコンをクリックして閉じてください。アシスタントは常に利用可能です -- 同じホバリングアイコンをクリックすることで、いつでも再度開くことができます。
 
-. Browse the available software templates. These are golden path templates maintained by the platform team.
+. 利用可能なソフトウェアテンプレートを閲覧します。これらは、プラットフォームチームによって維持されているゴールデンパステンプレートです。
 
-. Select the **Parasol Insurance Development Environment** template (or similarly named template).
+. **Parasol Insurance Development Environment** テンプレート (または類似の名前のテンプレート) を選択します。
 
-. Fill in the template form:
-* **Branch name**: Enter a short name for your feature branch, for example: `claims-stats`
+. テンプレートフォームに記入します:
+* **Branch name** : フィーチャーブランチの短い名前を入力します。例: `claims-stats`
 +
-TIP: Keep the branch name short. It will be used to generate OpenShift Routes, which have length restrictions.
+TIP: ブランチ名は短くしてください。OpenShift Routes の生成に使用され、長さ制限があります。
 +
 image::rhdh-template-values.png[Development environment provisioned with one click,link=self,window=blank,width=700]
 
-. Click **Review** to review the details, and then click **Create** and watch the provisioning progress:
-* A feature branch is created in the source repository
-* A CI/CD pipeline is configured for your branch
-* A new component is registered in the Developer Hub catalog
+. **Review** をクリックして詳細を確認し、次に **Create** をクリックしてプロビジョニングの進行状況を確認します:
+* ソースリポジトリにフィーチャーブランチが作成されます
+* ブランチ用に CI/CD パイプラインが構成されます
+* Developer Hub カタログに新しいコンポーネントが登録されます
 
-. When provisioning completes, click **Open in Catalog** to see your new component.
+. プロビジョニングが完了したら、**Open in Catalog** をクリックして新しいコンポーネントを確認します。
 +
 image::rhdh-template-results.png[Development environment provisioned with one click,link=self,window=blank,width=700]
 
-. On the component page, click **View Source** to open the feature branch in GitLab.
+. コンポーネントページで、**View Source** をクリックして GitLab でフィーチャーブランチを開きます。
 +
-You may be prompted to log in to GitLab. Use the same credentials:
+GitLab へのログインを求められる場合があります。同じ認証情報を使用してください:
 +
 --
 Username:
@@ -173,88 +173,88 @@ Password:
 ----
 --
 +
-Take a look at the repository -- this is the branch where your changes will live until you merge them.
+リポジトリを見てみましょう -- これは、マージするまで変更が存在するブランチです。
 
-=== Verify
+=== 確認
 
-You now have:
+これで以下が揃いました:
 
-* A feature branch (`claims-stats`) in the Parasol source repository
-* A CI/CD pipeline wired to your branch (this will be visible on the `CI` tab once we build it in the next section)
-* A catalog entry in Developer Hub tracking your development work
+* Parasol ソースリポジトリ内のフィーチャーブランチ (`claims-stats`)
+* ブランチに接続された CI/CD パイプライン (次のセクションでビルドすると、`CI` タブに表示されます)
+* 開発作業を追跡する Developer Hub のカタログエントリ
 
 '''
 
 [#section-3]
-== Section 3: Build the feature
+== Section 3: 機能を構築する
 
-With your development environment ready, it is time to write code. You will use Red Hat OpenShift Dev Spaces -- a cloud-based IDE that runs entirely in the cluster. No local setup, no dependency conflicts, no "works on my machine" problems.
+開発環境の準備ができたので、コードを書く時間です。Red Hat OpenShift Dev Spaces を使用します -- クラスタ内で完全に動作するクラウドベースの IDE です。ローカルセットアップも、依存関係の競合も、「私のマシンでは動く」問題もありません。
 
-=== Exercise 1: Open Dev Spaces
+=== Exercise 1: Dev Spaces を開く
 
-. From your component overview page in Developer Hub, click the **Open in Dev Spaces** link to open a cloud workspace for your feature branch.
+. Developer Hub のコンポーネント概要ページから、**Open in Dev Spaces** リンクをクリックして、フィーチャーブランチ用のクラウドワークスペースを開きます。
 +
-Alternatively, you can open Dev Spaces directly at {devspaces_url}[{devspaces_url}^] and create a workspace from your repository URL.
+または、{devspaces_url}[{devspaces_url}^] で直接 Dev Spaces を開き、リポジトリ URL からワークスペースを作成することもできます。
 +
 image::rhdh-devspaces-link.png[Link to open pre-configured Dev Spaces seen in Red Hat Developer Hub,link=self,window=blank,width=700]
 
-. The first time Dev Spaces opens, click **Log In With OpenShift**. You will see several authorization prompts. These are security gates that ensure the IDE only acts with your explicit consent:
+. Dev Spaces を初めて開くときは、**Log In With OpenShift** をクリックします。いくつかの認証プロンプトが表示されます。これらは、IDE があなたの明示的な同意を得てのみ動作することを保証するセキュリティゲートです:
 
-.. **Authorize access to OpenShift** -- click **Allow selected permissions**
-.. **Do you trust the authors of this repository?** -- click **Continue**
-.. **GitLab login** -- log in with your credentials if needed (username: `{user}`, password: `{password}`)
-.. **GitLab Authorization** -- click **Authorize** to give DevSpaces permission to open your branch (if you wait too long here, you may need to click **Retry** to try again after giving permission)
+.. **Authorize access to OpenShift** -- **Allow selected permissions** をクリックします
+.. **Do you trust the authors of this repository?** -- **Continue** をクリックします
+.. **GitLab login** -- 必要に応じて認証情報でログインします (username: `{user}`, password: `{password}`)
+.. **GitLab Authorization** -- **Authorize** をクリックして、DevSpaces にブランチを開く権限を与えます (ここで待ちすぎた場合は、権限を与えた後に **Retry** をクリックして再試行する必要があるかもしれません)
 
-. Once the workspace loads, take a moment to explore:
-.. **Trust the workspace files** -- click **Yes, I trust the authors**
-.. **Trust publishers and install** -- click to install the recommended extensions including the AI coding assistant
-.. Dismiss any popups about MicroProfile or Dependency Analytics by clicking the **X**
+. ワークスペースが読み込まれたら、少し探索してみましょう:
+.. **Trust the workspace files** -- **Yes, I trust the authors** をクリックします
+.. **Trust publishers and install** -- クリックして、AI コーディングアシスタントを含む推奨拡張機能をインストールします
+.. MicroProfile または Dependency Analytics に関するポップアップは、**X** をクリックして閉じます
 +
-WARNING: If you miss the "trust the authors" prompt, Dev Spaces opens in Restricted Mode and you will see a highlighted banner at the bottom of the window. Click the banner to confirm trust so extensions load properly.
+WARNING: 「trust the authors」プロンプトを見逃すと、Dev Spaces は制限モードで開き、ウィンドウの下部にハイライトされたバナーが表示されます。バナーをクリックして信頼を確認し、拡張機能が適切に読み込まれるようにしてください。
 +
-* The file explorer shows the complete project structure
-* The terminal has CLI tools pre-installed (`oc`, `mvn`, etc.)
-* Extensions for Java, Quarkus, YAML, and the AI coding assistant are already configured
-* Git is connected to your feature branch
+* ファイルエクスプローラには完全なプロジェクト構造が表示されます
+* ターミナルには CLI ツール (`oc`、`mvn` など) がプリインストールされています
+* Java、Quarkus、YAML、AI コーディングアシスタントの拡張機能がすでに構成されています
+* Git はフィーチャーブランチに接続されています
 +
 image::devspaces-workspace-loaded.png[Cloud development workspace with the Parasol Insurance project fully loaded,link=self,window=blank,width=700]
 
-=== Exercise 2: Start the application in development mode
+=== Exercise 2: 開発モードでアプリケーションを起動する
 
-Before writing new code, start the application to see what you are working with.
+新しいコードを書く前に、作業対象を確認するためにアプリケーションを起動します。
 
-. Press kbd:[Ctrl+Shift+P] (or kbd:[Cmd+Shift+P] on Mac) to open the command palette.
+. kbd:[Ctrl+Shift+P] (Mac では kbd:[Cmd+Shift+P]) を押してコマンドパレットを開きます。
 
-. Type and select **Tasks: Run Task**.
+. **Tasks: Run Task** を入力して選択します。
 
-. Select the **devfile** task group.
+. **devfile** タスクグループを選択します。
 
-. Select **Start Development Mode (Hot Reload + debug)**.
+. **Start Development Mode (Hot Reload + debug)** を選択します。
 
-. Wait for the application to start. When Dev Spaces shows a popup notification to open the application, click to **Open In New Tab**.
+. アプリケーションが起動するのを待ちます。Dev Spaces がアプリケーションを開くためのポップアップ通知を表示したら、**Open In New Tab** をクリックします。
 +
 image::devspaces-workspace-popup.png[Quarkus popup,link=self,window=blank,width=700]
 +
-TIP: If you miss the popup, open the application from the *ENDPOINTS* panel in the lower left of the Dev Spaces window. Find *quarkus-dev (8080/https)* and click the arrow icon.
+TIP: ポップアップを見逃した場合は、Dev Spaces ウィンドウの左下にある *ENDPOINTS* パネルからアプリケーションを開きます。*quarkus-dev (8080/https)* を見つけて、矢印アイコンをクリックします。
 
-. Browse the running Parasol Insurance application:
-* This is a claims and customer management platform used by Parasol's agents
-* It handles insurance claims processing and customer communication
-* Behind the scenes, it uses Apache Kafka for message routing
+. 実行中の Parasol Insurance アプリケーションを閲覧します:
+* これは Parasol のエージェントが使用するクレームと顧客管理プラットフォームです
+* 保険クレーム処理と顧客コミュニケーションを処理します
+* 舞台裏では、メッセージルーティングに Apache Kafka を使用しています
 +
 image::parasol-app-home.png[Parasol Insurance application dashboard,link=self,window=blank,width=700]
 
-=== Exercise 3: Add the claims statistics endpoint
+=== Exercise 3: クレーム統計エンドポイントを追加する
 
-Now implement the feature. You will create a new REST endpoint that returns claims statistics (totals, breakdowns by category and status).
+それでは機能を実装しましょう。クレーム統計 (合計、カテゴリ別およびステータス別の内訳) を返す新しい REST エンドポイントを作成します。
 
-. Back in Dev Spaces, In the Explorer on the left, navigate to `src/main/java/com/parasol/`.
+. Dev Spaces に戻り、左側の Explorer で `src/main/java/com/parasol/` に移動します。
 
-. Right-click on the `parasol` directory and select **New File**. Name it `ClaimsStatsResource.java`.
+. `parasol` ディレクトリを右クリックし、**New File** を選択します。名前を `ClaimsStatsResource.java` とします。
 +
 image::parasol-app-newfile.png[Parasol Insurance application dashboard,link=self,window=blank,width=700]
 
-. Copy and paste the following code into the new file:
+. 以下のコードを新しいファイルにコピーして貼り付けます:
 +
 [source,java,role="copypaste"]
 ----
@@ -305,13 +305,13 @@ public class ClaimsStatsResource {
 }
 ----
 +
-NOTE: This code works, but it has some shortcuts. You used `System.out.println` instead of a proper logging framework, and the `catch` block silently swallows exceptions. These code smells are intentional -- the CI/CD pipeline will catch them in Section 4.
+NOTE: このコードは動作しますが、いくつかのショートカットがあります。適切なロギングフレームワークの代わりに `System.out.println` を使用し、`catch` ブロックは例外を静かに飲み込んでいます。これらのコードスメルは意図的なものです -- Section 4 で CI/CD パイプラインがそれらを検出します。
 
-. The file saves automatically. Quarkus dev mode detects the change and reloads the application -- no manual build step required.
+. ファイルは自動的に保存されます。Quarkus dev mode が変更を検出し、アプリケーションをリロードします -- 手動のビルドステップは不要です。
 
-. In your browser, switch to the tab for the Parasol running application, remove the `dashboard.html` from the URL and add `/api/claims/stats` to the end of the URL in the browser's address bar.
+. ブラウザで、実行中の Parasol アプリケーションのタブに切り替え、URL から `dashboard.html` を削除し、ブラウザのアドレスバーの URL の末尾に `/api/claims/stats` を追加します。
 +
-You should see JSON data with claim totals and breakdowns:
+クレームの合計と内訳を含む JSON データが表示されるはずです:
 +
 ----
 {
@@ -328,49 +328,49 @@ You should see JSON data with claim totals and breakdowns:
 }
 ----
 +
-The new endpoint is working. You wrote the code, saved the file, and the application reloaded in seconds. No build commands, no repackaging, no redeployment.
+新しいエンドポイントが動作しています。コードを書き、ファイルを保存すると、アプリケーションは数秒でリロードされました。ビルドコマンドも、再パッケージングも、再デプロイも不要です。
 +
 image::parasol-claims-stats-devmode.png[Claims statistics endpoint returning JSON data in dev mode,link=self,window=blank,width=700]
 
-=== Verify
+=== 確認
 
-You now have:
+これで以下が揃いました:
 
-* A running Parasol application in Quarkus development mode
-* A new `/api/claims/stats` endpoint returning claims data
-* Live reload working -- code changes are reflected in seconds
+* Quarkus 開発モードで実行されている Parasol アプリケーション
+* クレームデータを返す新しい `/api/claims/stats` エンドポイント
+* ライブリロードが動作 -- コード変更が数秒で反映される
 
 '''
 
 [#section-4]
-== Section 4: Ship it
+== Section 4: リリース
 
-Your feature works locally. Time to push it through the platform's CI/CD pipeline. A simple `git push` triggers an automated pipeline that builds, tests, and scans your code. No tickets, no manual triggers, no handoffs.
+機能はローカルで動作しています。プラットフォームの CI/CD パイプラインを通して push する時間です。シンプルな `git push` が、コードをビルド、テスト、スキャンする自動化されたパイプラインをトリガーします。チケットも、手動トリガーも、引き継ぎも不要です。
 
-=== Exercise 1: Push your code
+=== Exercise 1: コードを push する
 
-. In Dev Spaces, click the **Source Control** icon in the left sidebar (the branch icon).
+. Dev Spaces で、左サイドバーの **Source Control** アイコン (ブランチアイコン) をクリックします。
 
-. The new `ClaimsStatsResource.java` file appears under **Changes**.
+. 新しい `ClaimsStatsResource.java` ファイルが **Changes** の下に表示されます。
 
-. Click the **+** icon next to the file to stage it.
+. ファイルの横にある **+** アイコンをクリックしてステージングします。
 
-. Enter a commit message in the text field:
+. テキストフィールドにコミットメッセージを入力します:
 +
 [source,role="copypaste"]
 ----
 Add claims statistics API endpoint
 ----
 +
-WARNING: Do not skip the commit message. If you click **Commit & Push** with an empty message field, the editor will open a file called `COMMIT_EDITMSG` and wait for you to type a message and close the file tab (click the **X** on the `COMMIT_EDITMSG` tab). A spinning progress indicator may make it look like something is happening -- it is not. It is waiting for you to enter a message and close the file. If this happens, type your message on the first line, close the tab, and the commit will proceed.
+WARNING: コミットメッセージをスキップしないでください。空のメッセージフィールドで **Commit & Push** をクリックすると、エディタは `COMMIT_EDITMSG` というファイルを開き、メッセージを入力してファイルタブを閉じるのを待ちます (`COMMIT_EDITMSG` タブの **X** をクリック)。回転する進行状況インジケーターが何かが起こっているように見せるかもしれませんが、そうではありません。メッセージを入力してファイルを閉じるのを待っています。これが起こった場合は、最初の行にメッセージを入力し、タブを閉じると、コミットが進行します。
 
-. Click the dropdown arrow next to the **Commit** button and select **Commit & Push**.
+. **Commit** ボタンの横のドロップダウン矢印をクリックし、**Commit & Push** を選択します。
 +
 image::scm-commit.png[Developer commits and pushes code from the IDE,link=self,window=blank,width=700]
 
-=== Exercise 2: Watch the pipeline in Developer Hub
+=== Exercise 2: Developer Hub でパイプラインを監視する
 
-. Switch back to **Developer Hub** in your browser. You may need to log in again if your session has expired:
+. ブラウザで **Developer Hub** に戻ります。セッションが期限切れになっている場合は、再度ログインする必要があるかもしれません:
 +
 --
 Username:
@@ -385,78 +385,78 @@ Password:
 ----
 --
 
-. Navigate to your component in the catalog.
+. カタログ内のコンポーネントに移動します。
 
-. Click the **CI** tab to see the pipeline run that was triggered by your push. (you can ignore any failed GitLab pipelines shown - we are using OpenShift pipelines in this exercise)
+. **CI** タブをクリックして、push によってトリガーされたパイプライン実行を確認します。(表示される失敗した GitLab パイプラインは無視してかまいません - このエクササイズでは OpenShift Pipelines を使用しています)
 +
-. Click to expand the pipeline run to see the that the pipeline runs several stages:
+. パイプライン実行をクリックして展開し、パイプラインがいくつかのステージを実行することを確認します:
 +
-* **Clone** -- source code pulled from the Git repository
-* **SonarQube SAST** -- static analysis and code quality scanning
-* **Build and Push** -- application compiled, container image built and pushed to the registry
-* **Re-rollout app** -- updated application deployed to the dev environment
+* **Clone** -- Git リポジトリからソースコードを取得
+* **SonarQube SAST** -- 静的解析とコード品質スキャン
+* **Build and Push** -- アプリケーションをコンパイルし、コンテナイメージをビルドしてレジストリに push
+* **Re-rollout app** -- 更新されたアプリケーションを開発環境にデプロイ
 
-. Watch the pipeline progress. The **sonar-scan** stage will fail.
+. パイプラインの進行状況を確認します。 **sonar-scan** ステージは失敗します。
 +
 image::ocp-pipeline-running.png[Pipeline run in Developer Hub showing stages in progress,link=self,window=blank,width=700]
 
-=== Exercise 3: Diagnose the pipeline failure
+=== Exercise 3: パイプラインの失敗を診断する
 
-The pipeline caught something. The SonarQube quality gate failed because of the code shortcuts you took earlier.
+パイプラインが何かを検出しました。以前に行ったコードのショートカットのために、SonarQube 品質ゲートが失敗しました。
 
-. Click on the failed `sonar-scan` step to see the details.
+. 失敗した `sonar-scan` ステップをクリックして詳細を確認します。
 
-. Find the **SonarQube report URL** in the pipeline log output.
+. パイプラインログ出力で **SonarQube report URL** を見つけます。
 +
 image::ocp-pipeline-sonar-fail.png[SonarQube report showing code smell violations,link=self,window=blank,width=700]
 
-. Open the SonarQube report to see the specific issues:
-* **`System.out.println` usage** -- standard output should not be used for logging in production code
-* **Empty catch block** -- exceptions should not be silently swallowed
-* **Field injection** -- SonarQube recommends constructor injection over `@Inject` field injection for better testability
+. SonarQube レポートを開いて、具体的な問題を確認します:
+* **`System.out.println` の使用** -- 本番コードでのロギングには標準出力を使用すべきではありません
+* **空の catch ブロック** -- 例外を静かに飲み込むべきではありません
+* **Field injection** -- SonarQube はテスト容易性を向上させるために、`@Inject` field injection よりも constructor injection を推奨しています
 +
-These are not suggestions. They are hard quality gates. Code with these violations does not move forward.
+これらは提案ではありません。厳格な品質ゲートです。これらの違反があるコードは先に進むことができません。
 +
 image::ocp-pipeline-sonar-report.png[SonarQube report showing code smell violations,link=self,window=blank,width=700]
 
-=== Verify
+=== 確認
 
-You have now:
+これで以下を達成しました:
 
-* Pushed code and triggered an automated CI/CD pipeline
-* Watched the SonarQube quality gate catch real code smells
-* Found the specific violations in the SonarQube report
+* コードを push し、自動化された CI/CD パイプラインをトリガーした
+* SonarQube 品質ゲートが実際のコードスメルを検出するのを確認した
+* SonarQube レポートで具体的な違反を見つけた
 
-The pipeline did its job -- it caught problems before they reached production. Now you need to fix them.
+パイプラインはその仕事をしました -- 本番環境に到達する前に問題を検出しました。次はそれらを修正する必要があります。
 
 '''
 
 [#section-5]
-== Section 5: Call in the AI
+== Section 5: AI を呼び出す
 
-You could spend time researching the Quarkus logging API, reading SonarQube remediation guides, and manually refactoring your code. Or you could ask your AI coding assistant to do it for you.
+Quarkus ロギング API を調査したり、SonarQube 修復ガイドを読んだり、手動でコードをリファクタリングしたりする時間を費やすこともできます。または、AI コーディングアシスタントにそれを依頼することもできます。
 
-The platform engineering team has preconfigured a security team-approved agentic AI coding assistant (powered by Zoo Code) in every Dev Spaces workspace. This is not just a chatbot that suggests snippets. It is an AI agent that can read your entire project, understand the frameworks you are using, navigate across files to find patterns, and apply changes directly in your editor. You describe the problem in plain language, and it figures out the fix.
+プラットフォームエンジニアリングチームは、すべての Dev Spaces ワークスペースに、セキュリティチーム承認のエージェント型 AI コーディングアシスタント (Zoo Code を使用) を事前設定しています。これは単にスニペットを提案するチャットボットではありません。プロジェクト全体を読み、使用しているフレームワークを理解し、ファイル間を移動してパターンを見つけ、エディタで直接変更を適用できる AI エージェントです。問題を平易な言葉で説明すれば、修正方法を見つけ出します。
 
-=== Exercise 1: Fix the code with AI assistance
+=== Exercise 1: AI 支援でコードを修正する
 
-Let's use the AI assistant to resolve the SonarQube violations.
+AI アシスタントを使用して SonarQube 違反を解決しましょう。
 
-NOTE: We're using the link:https://www.zoocode.dev/[Zoo Code] open-source AI coding assistant. We've configured it to work with a large language model (LLM) we're hosting to facilitate this workshop.
+NOTE: link:https://www.zoocode.dev/[Zoo Code] オープンソース AI コーディングアシスタントを使用しています。このワークショップを促進するためにホストしている大規模言語モデル (LLM) と連携するように設定しています。
 
-. Switch back to **Dev Spaces**.
+. **Dev Spaces** に戻ります。
 
-. Click the **AI assistant** icon in the left sidebar.
+. 左サイドバーの **AI assistant** アイコンをクリックします。
 +
 image::zoo-code-sidebar.png[AI coding assistant icon in the Dev Spaces left sidebar,link=self,window=blank,width=700]
 +
-Notice the controls at the bottom of the chat panel. You can switch between personas -- **Architect** for design guidance, **Code** for implementation, **Ask** for general questions, and **Debug** for troubleshooting. You can also select from the AI models that the platform and security teams have approved for use -- no shadow AI here -- and configure what types of actions the assistant can auto-approve (such as file edits or terminal commands). For this exercise, file edits require your approval -- you will need to click **Save** after each edit the assistant proposes to keep the human in the loop. Once developers build confidence in the assistant, this can be switched to auto-approve for a faster workflow.
+チャットパネルの下部にあるコントロールに注目してください。ペルソナを切り替えることができます -- 設計ガイダンスには **Architect** 、実装には **Code** 、一般的な質問には **Ask** 、トラブルシューティングには **Debug** です。また、プラットフォームチームとセキュリティチームが使用を承認した AI モデルから選択でき、アシスタントが自動承認できるアクションの種類 (ファイル編集やターミナルコマンドなど) を設定できます。このエクササイズでは、ファイル編集には承認が必要です -- 人間をループに保つために、アシスタントが提案する各編集の後に **Save** をクリックする必要があります。開発者がアシスタントに信頼を築くと、より高速なワークフローのために自動承認に切り替えることができます。
 
-. At the bottom of the chat panel, click the persona selector and choose **Code** -- since we are editing implementation code, not architecting major changes.
+. チャットパネルの下部で、ペルソナセレクタをクリックして **Code** を選択します -- 大きな変更を設計するのではなく、実装コードを編集しているためです。
 +
 image::zoo-code-persona.png[Selecting the Code persona in the AI assistant,link=self,window=blank,width=700]
 
-. In the chat panel, enter this prompt:
+. チャットパネルで、このプロンプトを入力します:
 +
 [source,role="copypaste"]
 ----
@@ -468,22 +468,22 @@ throw any new exceptions, just log it using standard Quarkus logging.
 +
 image::zoo-code-prompt.png[Entering a prompt to fix SonarQube violations,link=self,window=blank,width=700]
 
-. Watch the assistant work. It reads your file, understands that this is a Quarkus project, and applies the fixes directly:
-* `System.out.println` replaced with `Log.info` from the Quarkus logging API
-* Empty `try-catch` removed -- exceptions propagate naturally
-* Field injection replaced with constructor injection
+. アシスタントの作業を見てください。ファイルを読み、これが Quarkus プロジェクトであることを理解し、修正を直接適用します:
+* `System.out.println` を Quarkus ロギング API の `Log.info` に置き換え
+* 空の `try-catch` を削除 -- 例外は自然に伝播
+* Field injection を constructor injection に置き換え
 +
 
-. As changes are made by the assistant, you will need to approve them. Click **Save** to approve each file edit. Remember, the assistant requires your explicit approval before modifying any file.
+. アシスタントによって変更が行われると、それらを承認する必要があります。各ファイル編集を承認するには **Save** をクリックします。アシスタントはファイルを変更する前に明示的な承認を必要とすることを覚えておいてください。
 +
 image::zoo-code-save.png[Clicking Save to approve the AI assistant's file edits,link=self,window=blank,width=700]
 
-. Once complete, the changes should be in the file. You can also look at diffs via the assistant:
+. 完了すると、変更がファイルに反映されているはずです。アシスタントを介して差分を確認することもできます:
 +
 image::zoo-code-result.png[Clicking Save to approve the AI assistant's file edits,link=self,window=blank,width=700]
 
 
-. Since LLMs are not deterministic, verify the corrected code looks similar to this:
+. LLM は決定論的ではないため、修正されたコードが次のようになっていることを確認します:
 +
 [source,java,role="copypaste"]
 ----
@@ -538,162 +538,162 @@ public class ClaimsStatsResource {
 }
 ----
 
-. Before committing -- you don't push untested code, right? -- switch to the browser tab where the Parasol application is still running and press kbd:[Ctrl+R] (or kbd:[Cmd+R] on Mac) to reload. Quarkus dev mode has already picked up the changes, so you should see the same JSON response at `/api/claims/stats` as before. If you closed that tab, click the **Explorer** icon in the left sidebar, then find the *ENDPOINTS* panel at the bottom and click *quarkus-dev (8080/https)* to reopen it. If the endpoint returns an error, check the Dev Spaces terminal and adjust the code before continuing.
+. コミットする前に -- テストしていないコードを push しませんよね? -- Parasol アプリケーションがまだ実行されているブラウザタブに切り替え、kbd:[Ctrl+R] (Mac では kbd:[Cmd+R]) を押してリロードします。Quarkus dev mode はすでに変更を検出しているため、以前と同じ JSON レスポンスが `/api/claims/stats` で表示されるはずです。そのタブを閉じた場合は、左サイドバーの **Explorer** アイコンをクリックし、下部の *ENDPOINTS* パネルを見つけて *quarkus-dev (8080/https)* をクリックして再度開きます。エンドポイントがエラーを返す場合は、Dev Spaces ターミナルを確認し、続行する前にコードを調整してください。
 
-. Commit and push the fix using the **Source Control** view:
-* Stage the modified `ClaimsStatsResource.java`
-* Commit message:
+. **Source Control** ビューを使用して修正をコミットして push します:
+* 変更された `ClaimsStatsResource.java` をステージング
+* コミットメッセージ:
 +
 [source,role="copypaste"]
 ----
 Fix code smells: use proper logging and remove empty catch block
 ----
-* Click the dropdown arrow next to **Commit** and select **Commit & Push**
+* **Commit** の横のドロップダウン矢印をクリックし、**Commit & Push** を選択
 
-=== Exercise 2: Verify the pipeline passes
+=== Exercise 2: パイプラインが成功することを確認する
 
-. Switch back to **Developer Hub** and check the **CI/CD** tab.
+. **Developer Hub** に戻り、**CI/CD** タブを確認します。
 
-. A new pipeline run starts automatically.
+. 新しいパイプライン実行が自動的に開始されます。
 
-. Watch all stages complete successfully:
-* The SonarQube quality gate passes this time
-* The image is built and pushed
-* The application is re-deployed
+. すべてのステージが正常に完了するのを確認します:
+* 今回は SonarQube 品質ゲートが成功
+* イメージがビルドされて push される
+* アプリケーションが再デプロイされる
 +
 image::ocp-pipeline-passed.png[All pipeline stages passing after fixing code smells,link=self,window=blank,width=700]
 
-=== Verify
+=== 確認
 
-You have now:
+これで以下を達成しました:
 
-* Used an agentic AI assistant to fix code smells identified by SonarQube
-* Pushed the fix and watched the pipeline pass
-* Seen how AI assistance integrates into the platform's development workflow
+* SonarQube によって特定されたコードスメルを修正するためにエージェント型 AI アシスタントを使用した
+* 修正を push し、パイプラインが成功するのを確認した
+* AI 支援がプラットフォームの開発ワークフローにどのように統合されているかを確認した
 
 '''
 
 [#section-6]
-== Section 6: Go live
+== Section 6: 本番環境へ
 
-The pipeline passed. Your code has been built, tested, scanned, and packaged. Now it is time to merge your changes and see them deployed to production through GitOps.
+パイプラインが成功しました。コードはビルド、テスト、スキャン、パッケージ化されました。変更をマージし、GitOps を通じて本番環境にデプロイされるのを確認する時間です。
 
-=== Exercise 1: Merge your feature branch
+=== Exercise 1: フィーチャーブランチをマージする
 
-. In **Developer Hub**, navigate to your component and click **View Source** to open the repository in GitLab.
+. **Developer Hub** で、コンポーネントに移動し、**View Source** をクリックして GitLab でリポジトリを開きます。
 
-. You should see a prompt at the top to **Create merge request** from your feature branch. Click it.
+. フィーチャーブランチから **Create merge request** するためのプロンプトが上部に表示されるはずです。クリックします。
 +
 image::gitlab-merge-prompt.png[GitLab prompt to open a Merge Request,link=self,window=blank,width=700]
 +
-NOTE: If no prompt appears, click **Merge Requests** in the left sidebar, then **New Merge Request**, and select your branch.
+NOTE: プロンプトが表示されない場合は、左サイドバーの **Merge Requests** をクリックし、次に **New Merge Request** をクリックして、ブランチを選択します。
 
-. Review the merge request:
-* Each commit on the _Commits_ tab near the bottom shows your two commits above the initial one created by this environment
-* The _Changes_ tab shows your new `ClaimsStatsResource.java` file with the corrected code
+. マージリクエストを確認します:
+* 下部近くの _Commits_ タブの各コミットには、この環境によって作成された初期コミットの上に 2 つのコミットが表示されます
+* _Changes_ タブには、修正されたコードを含む新しい `ClaimsStatsResource.java` ファイルが表示されます
 
-. Click **Create merge request** at the bottom to create the new request. The new request is created and opened for you and others to review.
+. 下部の **Create merge request** をクリックして新しいリクエストを作成します。新しいリクエストが作成され、あなたと他の人がレビューできるように開かれます。
 
-. At this point, the code would normally be reviewed and approved by others, but for now, to merge your changes into the main branch, just click **Merge**.
+. この時点で、コードは通常他の人によってレビューされ承認されますが、今のところ、変更をメインブランチにマージするために、**Merge** をクリックするだけです。
 +
 image::gitlab-merged.png[Merge complete,link=self,window=blank,width=700]
 
-Your changes are now merged into the main branch. The dev environment pipeline, as seen in the primary *Parasol Insurance* Component in Developer Hub, will pick this up and redeploy automatically. But to promote to production, you need to create a release.
+変更がメインブランチにマージされました。Developer Hub のプライマリ *Parasol Insurance* Component で見られるように、開発環境パイプラインがこれを検出し、自動的に再デプロイします。しかし、本番環境に昇格させるには、リリースを作成する必要があります。
 
 image::rhdh-dev-merge-build.png[Pipeline Run triggered after merging our MR,link=self,window=blank,width=700]
 
-=== Exercise 2: Create a release tag
+=== Exercise 2: リリースタグを作成する
 
-In a real organization, promoting code to production is typically handled by platform engineers or release managers. For this workshop, you will perform this step yourself to see the full end-to-end flow.
+実際の組織では、本番環境へのコード昇格は通常、プラットフォームエンジニアやリリースマネージャによって処理されます。このワークショップでは、完全なエンドツーエンドのフローを確認するために、このステップを自分で実行します。
 
-. In GitLab, navigate back to your **parasol-insurance** repository (use the project name in the breadcrumb at the top, it should be `{user} / parasol-insurance`. You can click the GitLab icon at the upper left to see all your repos).
+. GitLab で、**parasol-insurance** リポジトリに戻ります (上部のパンくずリストでプロジェクト名を使用します。`{user} / parasol-insurance` となるはずです。左上の GitLab アイコンをクリックすると、すべてのリポジトリが表示されます)。
 
-. In the left sidebar, click **Code**, then **Tags**.
+. 左サイドバーで、**Code**、次に **Tags** をクリックします。
 
-. Click **New tag**.
+. **New tag** をクリックします。
 
-. Fill in the tag details:
-* **Tag name**: `1.1`
-* **Create from**: `main`
-* **Message**: `Add claims statistics API endpoint`
+. タグの詳細を記入します:
+* **Tag name** : `1.1`
+* **Create from** : `main`
+* **Message** : `Add claims statistics API endpoint`
 
-. Click **Create tag**.
+. **Create tag** をクリックします。
 +
 image::gitlab-create-tag.png[Creating a release tag in GitLab,link=self,window=blank,width=700]
 
-Creating this tag triggers a pipeline behind the scenes. When the pipeline completes (it will take a few minutes), it generates a merge request against your `{user}/parasol-insurance-manifests` repository -- this is the GitOps manifests repo that drives production deployments through Argo CD.
+このタグを作成すると、舞台裏でパイプラインがトリガーされます。パイプラインが完了すると (数分かかります)、`{user}/parasol-insurance-manifests` リポジトリに対するマージリクエストが生成されます -- これは Argo CD を通じて本番デプロイメントを駆動する GitOps マニフェストリポジトリです。
 
-=== Exercise 3: Approve the GitOps promotion
+=== Exercise 3: GitOps 昇格を承認する
 
-. In GitLab, navigate to the `{user}/parasol-insurance-manifests` repository.
+. GitLab で、`{user}/parasol-insurance-manifests` リポジトリに移動します。
 +
-You can find it by clicking the GitLab logo in the top-left to go to the home page, then selecting the project from the list.
+左上の GitLab ロゴをクリックしてホームページに移動し、リストからプロジェクトを選択することで見つけることができます。
 
-. Click **Merge Requests** in the left sidebar.
+. 左サイドバーの **Merge Requests** をクリックします。
 
-. Find the merge request that bumps the Argo CD values to your new tag (`1.1`). Click on it.
+. 新しいタグ (`1.1`) に Argo CD 値を更新するマージリクエストを見つけます。クリックします。
 
-. Review the changes -- you will see the image tag being updated to reference your new release.
+. 変更を確認します -- 新しいリリースを参照するようにイメージタグが更新されているのが表示されます。
 
-. Click **Merge** to approve the promotion to production.
+. 本番環境への昇格を承認するために **Merge** をクリックします。
 +
 image::gitlab-manifests-mr.png[Merge request updating the production image tag in the GitOps manifests repo,link=self,window=blank,width=700]
 
-Argo CD watches this manifests repository. Once the merge completes, it detects the change and begins rolling out the new version to production.
+Argo CD はこのマニフェストリポジトリを監視しています。マージが完了すると、変更を検出し、本番環境への新しいバージョンのロールアウトを開始します。
 
-=== Exercise 4: Verify the feature in production
+=== Exercise 4: 本番環境で機能を確認する
 
-. Switch back to **Developer Hub**.
+. **Developer Hub** に戻ります。
 
-. Navigate to the **Catalog** and find the main **Parasol Insurance** component owned by your user -- not the `claims-stats` branch component. You can click the **Owned** filter to narrow the list.
+. **Catalog** に移動し、あなたのユーザが所有するメインの **Parasol Insurance** コンポーネントを見つけます -- `claims-stats` ブランチコンポーネントではありません。 **Owned** フィルタをクリックしてリストを絞り込むことができます。
 
-. Click on the component, then select the **Topology** tab.
+. コンポーネントをクリックし、次に **Topology** タブを選択します。
 +
-The topology view shows both the dev and prod environments for the application.
+トポロジビューには、アプリケーションの開発環境と本番環境の両方が表示されます。
 
-. Watch the production environment. It may initially appear red while the new version rolls out. Once the deployment completes, it will turn blue indicating the application is healthy.
+. 本番環境を確認します。新しいバージョンがロールアウトされている間、最初は赤く表示される場合があります。デプロイメントが完了すると、アプリケーションが正常であることを示す青色に変わります。
 +
 image::rhdh-topology-dev-prod.png[Developer Hub topology showing dev and prod environments,link=self,window=blank,width=700]
 +
-NOTE: You can switch from the **Topology** tab to the **CD** tab to see when the `prod` Argo CD application has detected the new commit to use the 1.1 tag. The Pod in the **Topology** view will become healthy soon after.
-. Click the small **Open** icon (the arrow at the upper right of the production application) to open it in a new tab.
+NOTE: **Topology** タブから **CD** タブに切り替えて、`prod` Argo CD アプリケーションが 1.1 タグを使用する新しいコミットを検出したタイミングを確認できます。**Topology** ビューの Pod はその直後に正常になります。
+. 小さな **Open** アイコン (本番アプリケーションの右上の矢印) をクリックして、新しいタブで開きます。
 
-. Remove the `dashboard.html` and append `/api/claims/stats` to the URL and confirm the claims statistics endpoint is returning data in the production environment.
+. `dashboard.html` を削除し、URL に `/api/claims/stats` を追加して、クレーム統計エンドポイントが本番環境でデータを返していることを確認します。
 
-The feature you wrote, tested, fixed, and merged is now live in production -- without a single deployment ticket.
+あなたが書き、テストし、修正し、マージした機能が、デプロイメントチケットなしで本番環境で稼働しています。
 
-=== Verify
+=== 確認
 
-You have now:
+これで以下を達成しました:
 
-* Merged your feature branch into main via GitLab
-* Created a release tag to trigger the promotion pipeline
-* Approved a GitOps merge request to update production manifests
-* Verified the claims statistics endpoint is live in production
+* GitLab 経由でフィーチャーブランチをメインにマージした
+* 昇格パイプラインをトリガーするリリースタグを作成した
+* 本番マニフェストを更新する GitOps マージリクエストを承認した
+* クレーム統計エンドポイントが本番環境で稼働していることを確認した
 
 '''
 
-== Module summary
+== モジュールのまとめ
 
-You just completed the full developer journey at Parasol Insurance -- from onboarding to production deployment -- without filing a single ticket, installing any tools, or waiting for anyone.
+Parasol Insurance での完全な開発者ジャーニーを完了しました -- オンボーディングから本番デプロイメントまで -- チケットを提出したり、ツールをインストールしたり、誰かを待ったりすることなく。
 
-**What you accomplished:**
+**達成したこと:**
 
-* Discovered applications, APIs, and documentation through Developer Hub's software catalog
-* Used Lightspeed to get AI-powered answers about the platform
-* Created an isolated development environment with a self-service template
-* Wrote and tested code in a preconfigured cloud IDE with Dev Spaces
-* Used an AI coding assistant to fix code quality issues
-* Pushed code through an automated CI/CD pipeline with quality gates
-* Created a release tag and approved a GitOps promotion to deploy to production
-* Verified the feature in production through Developer Hub's topology view
+* Developer Hub のソフトウェアカタログを通じてアプリケーション、API、ドキュメントを発見した
+* Lightspeed を使用してプラットフォームに関する AI を活用した回答を得た
+* セルフサービステンプレートで分離された開発環境を作成した
+* Dev Spaces で事前設定されたクラウド IDE でコードを書いてテストした
+* AI コーディングアシスタントを使用してコード品質の問題を修正した
+* 品質ゲートを備えた自動化された CI/CD パイプラインを通じてコードを push した
+* リリースタグを作成し、本番環境にデプロイするための GitOps 昇格を承認した
+* Developer Hub のトポロジビューを通じて本番環境で機能を確認した
 
-**Key takeaways:**
+**重要なポイント:**
 
-* **Developer Hub** is the single pane of glass -- catalog, templates, CI/CD visibility, and AI assistance in one place
-* **Dev Spaces** eliminates local environment setup -- every developer gets the same preconfigured workspace
-* **Pipelines** enforce quality automatically -- code smells and security issues are caught before production
-* **GitOps** makes deployments repeatable and auditable -- Git is the single source of truth
-* **The platform** handles the undifferentiated heavy lifting so developers can focus on writing code
+* **Developer Hub** は単一のガラス窓です -- カタログ、テンプレート、CI/CD の可視性、AI 支援が 1 か所に
+* **Dev Spaces** はローカル環境のセットアップを排除します -- すべての開発者が同じ事前設定されたワークスペースを取得
+* **Pipelines** は品質を自動的に強制します -- コードスメルとセキュリティ問題は本番環境の前に検出される
+* **GitOps** はデプロイメントを再現可能で監査可能にします -- Git が唯一の信頼できる情報源
+* **プラットフォーム** は差別化されていない重労働を処理するため、開発者はコードの記述に集中できる
 
-This is what a cohesive application platform looks like. Everything you need, from code to production, available on-premises, in any cloud, or at the edge.
+これが、統合されたアプリケーションプラットフォームの姿です。コードから本番環境まで、必要なものすべてが、オンプレミス、あらゆるクラウド、またはエッジで利用可能です。

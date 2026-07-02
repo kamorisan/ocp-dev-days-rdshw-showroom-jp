@@ -1,42 +1,42 @@
-= Workshop details
+= ワークショップ詳細
 include::partial$_attributes.adoc[]
 
-== Timing
+== タイミング
 
-This workshop is designed for **90 minutes** of hands-on work.
+このワークショップは **90 分** のハンズオン作業向けに設計されています。
 
 [cols="2,1,3",options="header"]
 |===
-| Section | Duration | What you will do
+| セクション | 所要時間 | 実施内容
 
-| Meet the platform
-| 10 min
-| Log into Developer Hub, explore the software catalog, APIs, and AI assistant
+| プラットフォームとの出会い
+| 10 分
+| Developer Hub にログインし、ソフトウェアカタログ、API、AI アシスタントを探索
 
-| Your mission
-| 10 min
-| Find your assigned task, create a development environment using a self-service template
+| あなたのミッション
+| 10 分
+| 割り当てられたタスクを見つけ、セルフサービステンプレートを使用して開発環境を作成
 
-| Build the feature
-| 25 min
-| Open Dev Spaces, explore the IDE, implement a feature with an AI coding assistant
+| 機能の構築
+| 25 分
+| Dev Spaces を開き、IDE を探索し、AI コーディングアシスタントで機能を実装
 
-| Ship it
-| 15 min
-| Push code, view CI pipeline in Developer Hub, diagnose a quality gate failure
+| リリース
+| 15 分
+| コードをプッシュし、Developer Hub で CI パイプラインを表示し、品質ゲートの失敗を診断
 
-| Call in the AI
-| 10 min
-| Use an agentic AI assistant to fix code smells, push the fix, watch the pipeline pass
+| AI の活用
+| 10 分
+| エージェント型 AI アシスタントを使用してコードの問題を修正し、修正をプッシュし、パイプラインが通過するのを確認
 
-| Go live
-| 15 min
-| Merge to main, create a release tag, approve the GitOps promotion, verify the feature in production
+| 本番公開
+| 15 分
+| main にマージし、リリースタグを作成し、GitOps プロモーションを承認し、本番環境で機能を確認
 |===
 
-== Environment access
+== 環境アクセス
 
-Your lab environment includes:
+ラボ環境には以下が含まれます:
 
 * **OpenShift Console**: {openshift_console_url}[{openshift_console_url}^]
 * **Red Hat Developer Hub**: {rhdh_url}[{rhdh_url}^]
@@ -44,25 +44,25 @@ Your lab environment includes:
 * **GitLab**: {gitlab_url}[{gitlab_url}^]
 * **Argo CD**: {argocd_url}[{argocd_url}^]
 
-**Login credentials**:
+**ログインクレデンシャル** :
 
-* Username: `{user}`
-* Password: `{password}`
+* ユーザー名: `{user}`
+* パスワード: `{password}`
 
-NOTE: All URLs and credentials are also available in the right-hand panel of this lab interface. Use the tabs at the top to switch between the OpenShift Console, Terminal, and GitLab.
+NOTE: すべての URL とクレデンシャルは、このラボインターフェースの右側パネルでも利用できます。上部のタブを使用して、OpenShift Console、Terminal、GitLab を切り替えます。
 
-== Technology stack
+== テクノロジースタック
 
-This workshop uses the following Red Hat products and upstream projects:
+このワークショップでは、以下の Red Hat 製品とアップストリームプロジェクトを使用します:
 
-* **Red Hat OpenShift** -- Container platform
-* **Red Hat Developer Hub** -- Internal developer portal (based on Backstage)
-* **Red Hat OpenShift Dev Spaces** -- Cloud development environments (based on Eclipse Che)
-* **Red Hat OpenShift Pipelines** -- CI/CD pipelines (based on Tekton)
-* **Red Hat OpenShift GitOps** -- GitOps-driven deployments (based on Argo CD)
-* **SonarQube** -- Static analysis and code quality scanning
-* **Parasol Insurance** -- Sample Quarkus application used throughout the workshop
+* **Red Hat OpenShift** -- コンテナプラットフォーム
+* **Red Hat Developer Hub** -- 内部開発者ポータル (Backstage ベース)
+* **Red Hat OpenShift Dev Spaces** -- クラウド開発環境 (Eclipse Che ベース)
+* **Red Hat OpenShift Pipelines** -- CI/CD パイプライン (Tekton ベース)
+* **Red Hat OpenShift GitOps** -- GitOps 駆動のデプロイメント (Argo CD ベース)
+* **SonarQube** -- 静的解析とコード品質スキャン
+* **Parasol Insurance** -- ワークショップ全体で使用されるサンプル Quarkus アプリケーション
 
-== Authors
+== 作成者
 
 Red Hat Developer Experience Team

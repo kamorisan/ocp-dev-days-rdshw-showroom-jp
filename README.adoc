@@ -1,34 +1,34 @@
 = OpenShift Dev Day
 
-Showroom lab guide for the **OpenShift Dev Day** workshop -- a 90-minute hands-on experience where attendees play the role of a new developer at Parasol Insurance and ship a feature from code to production without filing a single ticket.
+**OpenShift Dev Day** ワークショップ用の Showroom ラボガイド -- 参加者が Parasol Insurance の新しい開発者の役割を演じ、1つのチケットも提出せずにコードから本番環境まで機能をリリースする 90 分間のハンズオン体験です。
 
-This workshop is part of the https://www.redhat.com/en/events/red-hat-openshift-roadshows[Red Hat OpenShift Roadshows] series, which delivers in-person and virtual hands-on events worldwide. Each roadshow covers different aspects of the OpenShift platform; this one focuses on the cohesive developer experience across Developer Hub, Dev Spaces, Pipelines, GitOps, and AI-assisted coding.
+このワークショップは、世界中で対面およびバーチャルのハンズオンイベントを提供する https://www.redhat.com/en/events/red-hat-openshift-roadshows[Red Hat OpenShift Roadshows] シリーズの一部です。各 Roadshow は OpenShift プラットフォームのさまざまな側面をカバーしています。このワークショップは、Developer Hub、Dev Spaces、Pipelines、GitOps、AI 支援コーディングにわたる統合された開発者エクスペリエンスに焦点を当てています。
 
-Built with https://antora.org[Antora] and the Red Hat Demo Platform Showroom framework.
+https://antora.org[Antora] と Red Hat Demo Platform Showroom フレームワークで構築されています。
 
-== Documentation
+== ドキュメント
 
-Full documentation — getting started, content structure, configuration, local development, and AI-assisted content creation — is available at:
+完全なドキュメント -- 入門、コンテンツ構造、設定、ローカル開発、AI 支援コンテンツ作成 -- は以下で利用できます:
 
 https://rhpds.github.io/showroom_template_nookbag/
 
-== Quick Start
+== クイックスタート
 
-. https://github.com/rhpds/showroom_template_nookbag/generate[Create a repo from this template] (suggested naming: `<lab-name>-showroom`)
-. Clone your new repo and preview locally:
+. https://github.com/rhpds/showroom_template_nookbag/generate[このテンプレートからリポジトリを作成] (推奨命名: `<lab-name>-showroom`)
+. 新しいリポジトリをクローンしてローカルでプレビュー:
 +
 [source,sh]
 ----
 podman run --rm --name antora -v $PWD:/antora -p 8080:8080 -i -t ghcr.io/juliaaano/antora-viewer
 ----
 +
-On SELinux systems, append `:z` to the volume mount.
+SELinux システムでは、ボリュームマウントに `:z` を追加してください。
 
-. Edit content in `content/modules/ROOT/pages/`
-. See the https://rhpds.github.io/showroom_template_nookbag/modules/content-repo.html[Content Repository] docs for directory layout, Podman Compose with live reload, dev mode, and more.
+. `content/modules/ROOT/pages/` のコンテンツを編集
+. ディレクトリレイアウト、ライブリロード付き Podman Compose、開発モードなどについては、https://rhpds.github.io/showroom_template_nookbag/modules/content-repo.html[Content Repository] ドキュメントを参照してください。
 
-== Create Content with AI
+== AI でコンテンツを作成
 
-The https://github.com/rhpds/rhdp-skills-marketplace[RHDP Skills Marketplace] provides skills for Cursor IDE and Claude Code that generate labs, demos, and validate content against Red Hat standards.
+https://github.com/rhpds/rhdp-skills-marketplace[RHDP Skills Marketplace] は、Cursor IDE と Claude Code 用のスキルを提供し、ラボやデモを生成し、Red Hat 標準に対してコンテンツを検証します。
 
-See the https://rhpds.github.io/showroom_template_nookbag/modules/content-repo.html#_creating_content_with_ai_tools[AI Tools documentation] for details.
+詳細については、https://rhpds.github.io/showroom_template_nookbag/modules/content-repo.html#_creating_content_with_ai_tools[AI Tools ドキュメント] を参照してください。

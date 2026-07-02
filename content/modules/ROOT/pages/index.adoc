@@ -1,41 +1,41 @@
 = OpenShift Dev Day
 
-Welcome to OpenShift Dev Day -- a hands-on workshop where you experience the full developer journey on Red Hat OpenShift.
+OpenShift Dev Day へようこそ -- Red Hat OpenShift 上で完全な開発者ジャーニーを体験できるハンズオンワークショップです。
 
-== What you'll learn
+== 学べること
 
-In this workshop, you will:
+このワークショップでは、以下のことを学びます:
 
-* Explore Red Hat Developer Hub as a self-service internal developer portal
-* Use the software catalog to discover applications, APIs, and documentation
-* Launch a preconfigured cloud development environment with Red Hat OpenShift Dev Spaces
-* Build a feature using an AI coding assistant
-* Push code through an automated CI/CD pipeline with OpenShift Pipelines
-* Deploy to production using GitOps with Red Hat OpenShift GitOps (Argo CD)
-* Debug and monitor applications from Developer Hub and the OpenShift Console
+* セルフサービス型の内部開発者ポータルとして Red Hat Developer Hub を探索する
+* ソフトウェアカタログを使用してアプリケーション、API、ドキュメントを見つける
+* Red Hat OpenShift Dev Spaces で事前設定されたクラウド開発環境を起動する
+* AI コーディングアシスタントを使用して機能を構築する
+* OpenShift Pipelines で自動化された CI/CD パイプラインを通じてコードをプッシュする
+* Red Hat OpenShift GitOps (Argo CD) を使用して GitOps で本番環境にデプロイする
+* Developer Hub と OpenShift Console からアプリケーションをデバッグおよびモニタリングする
 
-== Who this is for
+== 対象者
 
-This workshop is designed for developers, platform engineers, and IT decision makers who want to understand the cohesive developer experience that OpenShift provides -- from code to production.
+このワークショップは、OpenShift が提供する統合された開発者エクスペリエンス -- コードから本番環境まで -- を理解したい開発者、プラットフォームエンジニア、IT 意思決定者向けに設計されています。
 
-**Experience level**: Beginner to intermediate. No prior OpenShift experience is required.
+**経験レベル** : 初級から中級。OpenShift の事前経験は必要ありません。
 
-== Workshop environment
+== ワークショップ環境
 
-Everything you need is already provisioned. Your lab environment includes:
+必要なものはすべて事前にプロビジョニングされています。ラボ環境には以下が含まれます:
 
-* An OpenShift cluster with Developer Hub, Dev Spaces, Pipelines, and GitOps preconfigured
-* A user account with access to all workshop resources
-* A sample application (Parasol Insurance) that you will extend with a new feature
+* Developer Hub、Dev Spaces、Pipelines、GitOps が事前設定された OpenShift クラスタ
+* すべてのワークショップリソースにアクセスできるユーザーアカウント
+* 新しい機能で拡張するサンプルアプリケーション (Parasol Insurance)
 
-Your credentials are available in the lab interface.
+クレデンシャルはラボインターフェースで利用できます。
 
-== Estimated time
+== 所要時間
 
-This workshop takes approximately **90 minutes** to complete.
+このワークショップの完了には約 **90 分** かかります。
 
-You can work at your own pace.
+自分のペースで作業できます。
 
-== Let's get started
+== 始めましょう
 
-Click on **Workshop overview** in the navigation to begin.
+ナビゲーションの **ワークショップ概要** をクリックして開始してください。
