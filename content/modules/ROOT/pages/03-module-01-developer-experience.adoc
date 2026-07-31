@@ -23,7 +23,7 @@ Parasol Insurance での初日です。あなたはクレーム処理チーム�
 
 === Exercise 1: Developer Hub を探索する
 
-. 右側の **Developer Hub** タブを選択するか、{rhdh_url}[{rhdh_url}^] で **Red Hat Developer Hub** を開きます
+. 右側の **Developer Hub** タブを選択するか、 {rhdh_url}[{rhdh_url}^] で **Red Hat Developer Hub** を開きます
 
 . OIDC プロバイダを使用して認証情報でログインします:
 +
@@ -194,7 +194,7 @@ Password:
 
 . Developer Hub のコンポーネント概要ページから、**Open in Dev Spaces** リンクをクリックして、フィーチャーブランチ用のクラウドワークスペースを開きます。
 +
-または、{devspaces_url}[{devspaces_url}^] で直接 Dev Spaces を開き、リポジトリ URL からワークスペースを作成することもできます。
+または、 {devspaces_url}[{devspaces_url}^] で直接 Dev Spaces を開き、リポジトリ URL からワークスペースを作成することもできます。
 +
 image::rhdh-devspaces-link.png[Link to open pre-configured Dev Spaces seen in Red Hat Developer Hub,link=self,window=blank,width=700]
 
